@@ -9,6 +9,10 @@
 		.lst{
 			color: #0492C2;
 		}
+		.ledger{
+			margin-left: auto;
+		}
+		
 	</style>
 	</head>
 	
@@ -17,89 +21,86 @@
 			<form class="content">
 				<div class="header">
 			
-						<h3>Staff Login</h3>
+					<h3>Staff Login</h3>
 						
+				</div>
 						
-						</div>
-						
-						<div class="inputs">
-						<form class="content">
+				<div class="inputs">
+					<form class="content">
 						<table>
 						<tr>
 							<td><h2>STAFF ID</h2></td>
 							<td><input type="text" name="userid" id="userid" style="width: 300;"></td>
 						</tr>
 						</table>
-						</form>
-						</div>
+					</form>
+				</div>
 						
+				<div  class="inputs">
+					<form class="content">
+					<table>
+					<tr>
+						<td><h2>PASSWORD</h2></td>
+						<td><input type="password" name="password" id="password" style="width: 300;"></td>
+					</tr>
+					</table>
+					</form>
+				</div>
 						
-						<div  class="inputs">
-						<form class="content">
+			    <div class="inputs">
+					<form class="content">
 						<table>
-						<tr>
-							<td><h2>PASSWORD</h2></td>
-							<td><input type="password" name="password" id="password" style="width: 300;"></td>
-						</tr>
+							<tr>
+								<td></td>
+								<td>
+								<ul>
+									<button type="button" name="login" id="login" class="btn" onclick="loginoption(1);">Login</button>
+								</td>
+								</ul>
+							</tr>
 						</table>
 						</form>
-						</div>
-						
-						<div class="inputs">
-						<form class="content">
-						<table>
-						<tr>
-							<td></td>
-							<td>
-							<ul>
-								<!--<li class="lst"><h3><a href="startup.html" style="text-decoration:none;" onclick="switcher(1);">Login</a></h3></li>-->
-								<button type="button" name="login" id="login" class="btn" onclick="loginoption(1);">Login</button>
-							</td>
-							</ul>
-						</tr>
-						</table>
-						</form>
-						</div>
 						
 						<td>
 						<ul>
 							<li class="lst"><h4><a href="passwordreset.html" style="text-decoration:none;" onclick="switcher(1);"> Forgot password? </a></h4></li>
 						</ul>
 						</td>
-					
-				</form>
-			</div>
-			
-			<div id="startup"  class="navigation" >
-			<form name="form3" id="form3" class="form3">
-			<input type="hidden" id="status" value="0">
-			<table>
-				<td>
-					
-					<nav>
-						<ul><div class="logo">
-						<h1>MY BUSINESS SALES</h1>
-						</div>
-						<div class="items">
-						<li><button type="button" name="sales" id="sales" onclick="changeoption(1);">Start Sales</li>
-						</div>
-						<div class="items" >
-						<li><button type="button" name="ledge" id="ledge" onclick="changeoption(2);">Check Ledger</li>
-						</div>
-						<div class="items" >
-						<li><button type="button" name="logout" class="lst"><h3><a href="#" style="text-decoration:none;" onclick="changeoption(3);">Logout</h3></a></li>
-						</div>
-						</ul>
-						
-					</nav>
-					
-				</td>
-			</table>
+				</div>
 			</form>
+		</div>
+			
+			<div id="startup"  class="navigation">
+				<form name="form3" id="form3" class="form3">
+					<input type="hidden" id="status" value="0">
+					<table>
+						<td>
+							
+							<nav>
+								<ul><div class="logo">
+								<h1>MY BUSINESS SALES</h1>
+								</div>
+								<div class="btn1">
+								<li><button type="button" name="sales" id="sales" onclick="changeoption(1) ;">Start Sales</li>
+								</div>
+								<div class="btn1" >
+								<li><button type="button" name="ledge" id="ledge" onclick="changeoption(2);">Check Ledger</li>
+								</div>
+								<div class="btn1" >
+								<li><button type="button" name="logout" class="lst"><h3><a href="#" style="text-decoration:none;" onclick="changeoption(3);">Logout</h3></a></li>
+								</div>
+								</ul>
+								
+							</nav>
+							
+						</td>
+					</table>
+				</form>
 			</div>
 			
 			<div id="journal" class="journal">
 				<form name="form1" id="form1" class="form1">
+					<input type="hidden" id="status" value="0">
 					<table class="tbl">
 					
 						<tr class="row">
@@ -107,31 +108,16 @@
 							<td><input type="date" name="dateled" id="dateled" style="width: 300;"></td>
 						</tr>
 						
-						
 						<tr class="row">
 							<td>Time of Deposit</td>
 							<td><input type="time" name="timeled" id="timeled" style="width: 300;"></td>
 						</tr>
-						
+		
 						<tr class="row">
 							<td> Item Description</td>
 							<td><input type="text" name="itemdescr" id="itemdescr" style="width: 300;" onkeypress="itemfetch()"></td>
-						<!--		
+
 						</tr>
-						<tr id='product'>
-						<!--
-							<tr>
-								<th> Available Product(s)</th>
-							</tr>
-							<tr>
-								<td>Oral B blue<td>
-							</tr>
-							<tr>
-								<td>Oral B Harbalew<td>
-							</tr>
-						
-						</tr>
-						-->
 						<tr class="row">
 							<td>Particulars</td>
 							<td><input type="text" name="particulars" id="particulars" style="width: 300;"></td>
@@ -151,24 +137,27 @@
 								<option value="Debit">Debit</option>
 						</tr>
 						
-						
 						<tr class="row">
 							<td>Amount Credited/Debited</td>
 							
-							<td><input type="text" name="price" id="price" style="width: 300;"></td>
+							<td><input type="text" name="price" id="price" style="width: 300;" onkeypress="compute"></td>
 						</tr>
 						
 						<tr  class="row">
 							<td>Name of Customer</td>
 							<td><input type="text" name="cusname" id="cusname" style="width: 300;"></td>
 						</tr>
-						</div>
+						
 										
 						<tr class="row">
 							<td></td>
 							<td>
 								<button type="button" name="btnsave" id="btnsave">Save</button>
 							</td>
+						</tr>
+						<tr class="operator">
+							<td>OPERATOR</td>
+							<td><option  id="operator" value="Multiplication"></option></td>
 						</tr>	
 					</table>
 				</form>
@@ -181,35 +170,39 @@
 					<table>
 						<tr>
 							<td><h3 class="text">Date</h3></td>
-							<td><input type="text" name="dateled" id="dateled" style="width: 300;"></td>
-						
+							<td><input type="date" name="dayte" id="dayte" style="width: 300;"></td>
 						</tr>
 						<tr>
 							<td></td>
 							<td>
-								<button type="button" name="btnled" id="btnled" onclick="chkled(1);">Check</button>
+								<button type="button" name="btnled" id="btnled" onclick="chkled(2);">Check</button>
 							</td>
 						</tr>	
 					</table>
 				</form>
+				
 			</div>
-			<div id="ledger">
 			
-				<span style="color: #0492C2"><h3><u>LEDGER FOR THE DAY</u></h3></span><br>
+			<div id="ledger" class="ledger">
+				<span style="color: rgb(53, 15, 15);"><h3><u>LEDGER FOR THE DAY</u></h3></span><br>
 				<table border="1" class="tabres">
 					<tr class="tabh">
 						<th style="width:70px;">Date</th>
+						<th style="width:70px;">Time</th>
 						<th style="width:200px;">Particulars</th>
 						<th style="width:100px;">Description</th>
 						<th style="width:60px;">Transaction Type</th>
 						<th style="width:80px;">DR</th>
 						<th style="width:80px;">CR</th>
 						<th style="width:100px;">Balance</th>
-						<th style="width:100px;">Staff ID</th>
-						<th style="width:200px;">Customer Name</th>
-						
+						<!--<th style="width:100px;">Staff ID</th>
+						<th style="width:200px;">Customer Name</th>-->
 					</tr>
-					
+					<tbody>
+						<tr id="ledgdata" class="ledgdata">
+
+						</tr>
+					</tbody>
 				</table>
 			
 			</div>
@@ -217,14 +210,14 @@
 	</body>
 <script>
 	$(document).ready(function(){
-	
-		//itemfetch();
-		
-		
+		loadtable();
+		itemfetch();
+		$("#operator").hide();
 		$("#startup").hide();
 		$("#journal").hide();
 		$("#ledger").hide();
 		$("#check").hide();
+		clearinput();
 		
 			});
 			
@@ -232,61 +225,51 @@
 			if (x==1){
 				$("#login").hide();
 				$("#startup").show();
-				
-			}else{
-				$("#login").show();
-				$("#startup").hide();			
+				clearlogin();
+			}else{					
+				clearlogin();
+				alert("Incorrect User name or Password ")
 			}
 		}
 		function changeoption(x){
 			if (x==1){
+				clearinput();
 				$("#check").hide();
 				$("#journal").show();
 				$("#logout").hide();
-				
-				
+				$("#operator").hide();			
 			}else if (x==2){
 				$("#check").show();
 				$("#journal").hide();
 				$("#logout").hide();
-				
+				$("#operator").hide();				
 			}
 			else if (x==3){
 				var txt;
 				var r = confirm("Are you sure you want to log out?");
-				if (r == true) {
-					txt = "You pressed OK!";
+				if (r == true) {				
 					$("#check").hide();
 					$("#journal").hide();
 					$("#startup").hide();
-					$("#ledger").hide();
-					
+					$("#ledger").hide();			
 					$("#login").show();
 				} else {
-					txt = "You pressed Cancel!";
 					$("#check").hide();
 					$("#journal").hide();
 					$("#startup").show();
 					$("#login").hide();
-					$("#ledger").hide();
-					
-				}
-			  document.getElementById("txt").value = txt;
-				
-				
-				
+					$("#ledger").hide();					
+				}	
 			}
-				
-			
 		}
-		function chkled(x){
-			if (x==1){
-				
-				$("#ledger").show();
-				//$("#logout").hide();
+		
+		function chkled(y){
+			if (y==2){	
+				loadtable();				
+				$("#ledger").show()				
 				$("#check").hide();
 			}else{
-				alert('MEH!');			
+			$("#ledger").hide();							
 			}
 		}
 		
@@ -304,54 +287,28 @@
 					alert('One or more input fields are empty');
 					
 				}else{
-							sentdata = $("form#form1").serialize();					
-							$.post("saver.php",sentdata).done(function(response){
-								alert(response);
-								//clearinput();
-							} );	
-						}
-
+					sentdata = $("form#form1").serialize();					
+					$.post("saver.php",sentdata).done(function(response){
+						alert(response);
 						
+						clearinput();
+					} );	
+				}
 			} );
-		/*function clearinput(){
-				var dateled 	= $("#dateled").val('');
-				var timeled			= $("#timeled").val('');
-				var itemdescr			= $("#itemdescr").val('');
-				var particulars			= $("#particulars").val('');
-				var quantity 			= $("#quantity").val('');
-				var price 			= $("#price").val('');
-				var trantype 			= $("#trantype").val('');
-				var cusname 			= $("#cusname").val('');
-				
-			}
-			function compute(){
-			var price 	 = $("#price").val().trim();
-			var quantity 	 = $("#quantity").val().trim();
-			var operator = $("#operator").val().trim();
-			(operator=='Multiplication'){
-				var price 	 = parseFloat(price) * parseFloat(quantity);
-			itemfetch();
-			}
 			
-			$("#price").val(price);
-		}*/
-		//using a get request
 		function itemfetch(){
-			//clearinput();
-			
-			
+
 			var itemdescr 	= $("#itemdescr").val().trim();
-		//	alert(itemdescr);
 			console.log(itemdescr);
 			var x = document.getElementById("itemdescr");
 			x.value = x.value.toUpperCase();
 			var sentdata = new FormData();
 			sentdata.append("itemdescr",itemdescr)
-			var sentdata  		= "itemdescr="+itemdescr;
-			/*
-			*/
+			var sentdata  = "itemdescr="+itemdescr;
+			
 			$.get("fetcher.php"+'?itemdescr=' + itemdescr,).done(function(response){
 			console.log(response)
+			//compute();
 				if(response!=0){
 					var data = $.parseJSON(response);
 					$("#status").val('1');
@@ -360,6 +317,34 @@
 				}
 			} );			
 		}
+		
+		
+		function compute(){
+			
+			var price	 	 = document.getElementById("price").value;
+			var quantitee	 =  document.getElementById("quantitee").value;
+			
+			var mult = price * quantitee;
+			document.getElementById(operator) = mult;}
+			
+		
+		function clearlogin(){
+			var userid 		= $("#userid").val('');
+			var password	= $("#password").val('');
+		
+		}
+		function clearinput(){
+			$("#status").val('0');
+				//var dateled 		= $("#dateled").val('');
+				var timeled			= $("#timeled").val('');
+				var itemdescr		= $("#itemdescr").val('');
+				var particulars		= $("#particulars").val('');
+				var quantity 		= $("#quantitee").val('');
+				var price 			= $("#price").val('');
+				var trantype 		= $("#trantype").val('');
+				var cusname 		= $("#cusname").val('');
+				
+			}
 		/*
 		function loadtable(){
 			$("#tbdata").empty();
@@ -367,6 +352,79 @@
 				$("#tbdata").append(data);
 			});
 		}*/
+				
+				$("#btnled").click(function(){
+					var dayte 	= $("#dayte").val().trim();
+
+					if (dayte==''){
+					alert('Enter Date');
+					$("#ledger").hide();
+					$("#check").show();	
+					}		
+								
+					else{
+					fetchledger();
+					}
+				$("#dayte").val('');
+				
+					});
+		function fetchledger(){
+			clearinput();
+			var dateled 	= $("#dateled").val().trim();
+			var sentdata  		= "dateled="+dateled;
+			$.post("fetchledger.php",sentdata).done(function(response){
+				if(response!=0){
+					var data = $.parseJSON(response);
+					$("#status").val('1');
+					$("#timeled").val(data.timeled);
+					$("#itemdescr").val(data.itemdescr);
+					$("#particulars").val(data.particulars);
+					$("#quantitee").val(data.quantitee);
+					$("#price").val(data.price);
+					$("#trantype").val(data.trantype);
+					$("#cusname").val(data.cusname);
+				}
+			} );			
+		}
+			/*
+				function fetchledger(){
+			
+					var dayte		= $("#dayte").val().trim();
+					var sentdata	= "dayte="+dayte;
+					$.post("fetchledger.php",sentdata).done(function(response){
+						if(response!=0){
+							
+							$("#ledgdata").empty();
+							var data = $.parseJSON(response);
+							$("#niinii").val(data.name);
+
+							var con ="<td>" + data.dateled + "</td><td>" + data.timeled + "</td><td>" + data.itemdescr
+							+ "</td><td>" + data.particulars + "</td><td>" + data.quantitee + "</td><td>" + data.price + "</td><td>"
+							+ data.trantype + "</td><td>" + data.cusname + "</td>";	
+							
+							$("#ledgdata").append(con);
+
+							showjournal();
+							$("#check").hide();
+							$("#ledger").show();
+						}
+						else{
+							alert("No Date");
+							$("#ledger").hide();
+						}
+					} );			
+		}
+		*/
+		function showjournal(){
+			alert("LEDGER");
+			$("#ledger").show();
+		}
+	function loadtable(){
+			$("#ledgdata").empty();
+			$.get("fetchledger.php",function(data){			
+				$("#ledgdata").append(data);
+			});
+		}
 		
 </script>
 </html>
