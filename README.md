@@ -1,4 +1,4 @@
-### Digital/Distributed Ledger App By Kezzy 
+### Digital / Distributed Ledger App By Kezzy 
 
 ##Distributed ledger technology refers to a digital system that records transactions
 
