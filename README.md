@@ -19,3 +19,14 @@ Third, Ledger structure and contents, including the T-account Structure
 
 
 The Source File Entails, 
+
+fetcher.php
+
+fetchledger.php
+
+itemfetch.php
+
+ledger.html
+
+saver.php
+
