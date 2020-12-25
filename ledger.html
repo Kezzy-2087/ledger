@@ -310,6 +310,8 @@
 			
 			$.get("fetcher.php"+'?itemdescr=' + itemdescr,).done(function(response){
 			console.log(response)
+			document.getElementById("price").value = price;
+			document.getElementById("quantitee").value = quantitee;
 			compute();
 				if(response!=0){
 					var data = $.parseJSON(response);
