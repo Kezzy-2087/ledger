@@ -1,5 +1,6 @@
 <html>
 	<head>
+		 <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 		<script src="jquery.js"></script>
 		<link rel="stylesheet" href="style.css">
 		<style>
@@ -155,7 +156,7 @@
 								<button type="button" name="btnsave" id="btnsave">Save</button>
 							</td>
 						</tr>
-						<tr class="operator">
+						<tr class="operator" id="operator">
 							<td>OPERATOR</td>
 							<td><option  id="operator" value="Multiplication"></option></td>
 						</tr>	
@@ -189,17 +190,18 @@
 					<tr class="tabh">
 						<th style="width:70px;">Date</th>
 						<th style="width:70px;">Time</th>
-						<th style="width:200px;">Particulars</th>
 						<th style="width:100px;">Description</th>
+						<th style="width:200px;">Particulars</th>
+						<th style="width:70px;">Quantity</th>
 						<th style="width:60px;">Transaction Type</th>
-						<th style="width:80px;">DR</th>
-						<th style="width:80px;">CR</th>
+						<!--<th style="width:80px;">DR</th>
+						<th style="width:80px;">CR</th>-->
 						<th style="width:100px;">Balance</th>
 						<!--<th style="width:100px;">Staff ID</th>
 						<th style="width:200px;">Customer Name</th>-->
 					</tr>
 					<tbody>
-						<tr id="ledgdata" class="ledgdata">
+						<tr class="tabres" id="ledgdata">
 
 						</tr>
 					</tbody>
@@ -308,7 +310,7 @@
 			
 			$.get("fetcher.php"+'?itemdescr=' + itemdescr,).done(function(response){
 			console.log(response)
-			//compute();
+			compute();
 				if(response!=0){
 					var data = $.parseJSON(response);
 					$("#status").val('1');
@@ -323,9 +325,13 @@
 			
 			var price	 	 = document.getElementById("price").value;
 			var quantitee	 =  document.getElementById("quantitee").value;
-			
-			var mult = price * quantitee;
-			document.getElementById(operator) = mult;}
+			var operator = document.getElementById("operator").value.trim();
+			if (operator=='Multiplication'){
+			var price = parseFloat(price) * parseFloat(quantitee)
+		}
+
+			document.getElementById("price").value = price;
+		}
 			
 		
 		function clearlogin(){
@@ -335,7 +341,7 @@
 		}
 		function clearinput(){
 			$("#status").val('0');
-				//var dateled 		= $("#dateled").val('');
+				var dateled 		= $("#dateled").val('');
 				var timeled			= $("#timeled").val('');
 				var itemdescr		= $("#itemdescr").val('');
 				var particulars		= $("#particulars").val('');
@@ -372,7 +378,7 @@
 			clearinput();
 			var dateled 	= $("#dateled").val().trim();
 			var sentdata  		= "dateled="+dateled;
-			$.post("fetchledger.php",sentdata).done(function(response){
+			$.post("fetchled.php",sentdata).done(function(response){
 				if(response!=0){
 					var data = $.parseJSON(response);
 					$("#status").val('1');
